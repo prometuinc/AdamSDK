@@ -4,13 +4,6 @@ Welcome to the **AdamSDK**! 🎉 This SDK is designed to help you easily interac
 
 **Please note:** ⚠️ This SDK and its documentation are still under active development 🚧. We are constantly improving and expanding the features, and this README serves as a small preview 👀 of the available functionality. A complete, detailed documentation will be available in the future 📑.
 
-
-# AdamSDK - A Work in Progress 🚧
-
-Welcome to the **AdamSDK**! 🎉 This SDK is designed to help you easily interact with various components of the Adam system 🤖. It provides control for camera 📸, vision 👁️, speech-to-text (SST) 🗣️, text-to-speech (TTS) 🔊, robot movement 🤖, sensors ⚙️, and more.
-
-**Please note:** ⚠️ This SDK and its documentation are still under active development 🚧. We are constantly improving and expanding the features, and this README serves as a small preview 👀 of the available functionality. A complete, detailed documentation will be available in the future 📑.
-
 ## Example Code 🧑‍💻
 
 Here is an example of how to use the **AdamSDK** to control the camera, perform pose estimation, face recognition, and track a person:
