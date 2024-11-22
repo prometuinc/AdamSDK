@@ -1,0 +1,54 @@
+# Archivos y directorios de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+env/
+venv/
+ENV/
+.venv/
+.VENV/
+
+# Archivos de configuración de entorno
+*.env
+.env.*
+
+# Configuración de IDEs/editores
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Archivos de logs y depuración
+*.log
+*.sqlite3
+
+# Archivos de dependencia
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Archivos de compilación
+*.egg
+*.egg-info/
+dist/
+build/
+*.wheel
+
+# Archivos creados por herramientas de prueba
+.coverage
+.tox/
+.nox/
+.cache/
+pytest_cache/
+htmlcov/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Documentación generada
+docs/_build/
