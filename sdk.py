@@ -16,8 +16,18 @@ class AdamSDK:
         self.bluetooth = Bluetooth(server_url)
         self.settings = Settings(server_url)
 
-    def control_camera(self, status=True, window=False, title="Camera Control"):
-        return self.camera.control_camera(status, window, title)
+    def camera_control(self, status=True):
+        """
+        Controla el estado de la cámara y la ventana de OpenCV.
+        """
+        # Primero, controlamos la cámara
+        return self.camera.camera_control(status)
+
+    def camera_control_window(self, window=False, title="Camera Control"):
+        """
+        Controla la ventana de OpenCV.
+        """
+        return self.camera.camera_control_window(window, title)
 
     def pose_estimation(self, status=None, draw=None):
         return self.vision.pose_estimation(status, draw)
