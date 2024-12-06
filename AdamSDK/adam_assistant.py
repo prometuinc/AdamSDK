@@ -16,16 +16,32 @@ class Assistant:
         except requests.exceptions.RequestException as e:
             raise RuntimeError(f"Error in speech-to-text request: {e}")
 
-    # Función para Text-to-Speech
-    def tts(self, text):
+    def tts(self, texto, idioma="en", genero="male", play=False, delete_after_play=False):
+        """
+        Convierte texto a voz usando el endpoint /tts.
+
+        :param texto: El texto a convertir en audio.
+        :param idioma: Idioma de la voz (ej. 'en' o 'es').
+        :param genero: Género de la voz ('male' o 'female').
+        :param play: Si es True, reproducirá el audio generado.
+        :param delete_after_play: Si es True, eliminará el archivo después de reproducirlo.
+        :return: Ruta del archivo de audio generado o mensaje de error.
+        """
         url = f"{self.server_url}/tts"
-        payload = {"text": text}
+        payload = {
+            "texto": texto,
+            "idioma": idioma,
+            "genero": genero,
+            "play": play,
+            "delete_after_play": delete_after_play
+        }
+
         try:
             response = requests.post(url, json=payload)
             response.raise_for_status()
-            return response.json()
+            return response.json()  # Devuelve la respuesta JSON del servidor
         except requests.exceptions.RequestException as e:
-            raise RuntimeError(f"Error in text-to-speech request: {e}")
+            return {"error": str(e)}
 
     # Función para detección de wake word (escuchar y activar el robot)
     def listen_for_wake_word(self, wake_word="hey adam", audio_device="default"):

@@ -41,8 +41,24 @@ class AdamSDK:
     def sst(self, audio_file):
         return self.assistant.sst(audio_file)
 
-    def tts(self, text):
-        return self.assistant.tts(text)
+    def tts(self, text, idioma="en", genero="male", play=False, delete_after_play=False):
+        """
+        Convert text to speech using TTS functionality.
+
+        :param text: The text to convert to audio.
+        :param language: Language of the voice (e.g. 'en' or 'es').
+        :param gender: Gender of the voice ('male' or 'female').
+        :param play: If True, will play the generated audio.
+        :param delete_after_play: If True, will delete the file after playing it.
+        :return: Path of the generated audio file or error message.
+        """
+        return self.assistant.tts(
+            texto=text,
+            idioma=idioma,
+            genero=genero,
+            play=play,
+            delete_after_play=delete_after_play,
+        )
 
     def listen_for_wake_word(self, wake_word="hey adam", audio_device="default"):
         return self.assistant.listen_for_wake_word(wake_word, audio_device)
